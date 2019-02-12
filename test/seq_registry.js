@@ -1,5 +1,3 @@
-import { AssertionError } from "assert";
-
 const SEQRegistry = artificats.require("./SEQRegistry.sol");
 
 contract("SEQ Registry test", accounts => {
