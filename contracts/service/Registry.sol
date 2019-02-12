@@ -10,9 +10,9 @@ contract Registry is RegistryInterface, OperatorRole {
         return _accounts[account];
     }
 
-    function add(address account, uint256 status) public onlyOperator returns (bool) {
+    function register(address account, uint256 status) public onlyOperator returns (bool) {
         _accounts[account] = status;
-        emit Add(account, status, msg.sender);
+        emit Register(account, status, msg.sender);
         return true;
     }
 
