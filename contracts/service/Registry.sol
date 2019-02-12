@@ -4,20 +4,20 @@ import "./RegistryInterface.sol";
 import "../access/roles/OperatorRole.sol";
 
 contract Registry is RegistryInterface, OperatorRole {
-    mapping (address => uint8) private _accounts;
+    mapping (address => uint256) private _accounts;
 
-    function check(address account) public view returns (uint8) {
+    function check(address account) public view returns (uint256) {
         return _accounts[account];
     }
 
-    function add(address account, uint8 status) public onlyOperator returns (bool) {
+    function add(address account, uint256 status) public onlyOperator returns (bool) {
         _accounts[account] = status;
         emit Add(account, status, msg.sender);
         return true;
     }
 
-    function update(address account, uint8 status) public onlyOperator returns (bool) {
-        uint8 old_status = _accounts[account];
+    function update(address account, uint256 status) public onlyOperator returns (bool) {
+        uint256 old_status = _accounts[account];
         _accounts[account] = status;
         emit Update(account, old_status, status, msg.sender);
         return true;
