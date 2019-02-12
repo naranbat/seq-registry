@@ -1,4 +1,4 @@
-const SEQRegistry = artificats.require("./SEQRegistry.sol");
+const SEQRegistry = artifacts.require("./SEQRegistry.sol");
 
 contract("SEQ Registry test", accounts => {
     it("SEQ Registry Contract is ready", async () => {
