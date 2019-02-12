@@ -12,6 +12,9 @@ contract SimpleContract {
 
     function check(address account) public view returns (uint256) {
         RegistryInterface _registry = RegistryInterface(_registryAddress);
+        // return _registry.check(account);
+        require(_registry.check(account) >= 0x10);
+        
         return _registry.check(account);
     }
 }
